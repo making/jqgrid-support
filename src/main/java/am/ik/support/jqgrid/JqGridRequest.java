@@ -17,24 +17,15 @@
 package am.ik.support.jqgrid;
 
 public class JqGridRequest {
-    private boolean _search;
     private String nd;
-    private int rows = 10;
-    private int page = 1;
+    private int rows;
+    private int page;
     private String sidx;
     private String sord;
     private String searchField;
     private String searchString;
     private String searchOper;
     private String filters;
-
-    public boolean is_search() {
-        return _search;
-    }
-
-    public void set_search(boolean _search) {
-        this._search = _search;
-    }
 
     public String getNd() {
         return nd;
@@ -76,35 +67,6 @@ public class JqGridRequest {
         this.sord = sord;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder builder = new StringBuilder();
-        builder.append("JqGridRequest [_search=");
-        builder.append(_search);
-        builder.append(", ");
-        if (nd != null) {
-            builder.append("nd=");
-            builder.append(nd);
-            builder.append(", ");
-        }
-        builder.append("rows=");
-        builder.append(rows);
-        builder.append(", page=");
-        builder.append(page);
-        builder.append(", ");
-        if (sidx != null) {
-            builder.append("sidx=");
-            builder.append(sidx);
-            builder.append(", ");
-        }
-        if (sord != null) {
-            builder.append("sord=");
-            builder.append(sord);
-        }
-        builder.append("]");
-        return builder.toString();
-    }
-
     public String getSearchField() {
         return searchField;
     }
@@ -135,6 +97,53 @@ public class JqGridRequest {
 
     public void setFilters(String filters) {
         this.filters = filters;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("JqGridRequest [");
+        if (nd != null) {
+            builder.append("nd=");
+            builder.append(nd);
+            builder.append(", ");
+        }
+        builder.append("rows=");
+        builder.append(rows);
+        builder.append(", page=");
+        builder.append(page);
+        builder.append(", ");
+        if (sidx != null) {
+            builder.append("sidx=");
+            builder.append(sidx);
+            builder.append(", ");
+        }
+        if (sord != null) {
+            builder.append("sord=");
+            builder.append(sord);
+            builder.append(", ");
+        }
+        if (searchField != null) {
+            builder.append("searchField=");
+            builder.append(searchField);
+            builder.append(", ");
+        }
+        if (searchString != null) {
+            builder.append("searchString=");
+            builder.append(searchString);
+            builder.append(", ");
+        }
+        if (searchOper != null) {
+            builder.append("searchOper=");
+            builder.append(searchOper);
+            builder.append(", ");
+        }
+        if (filters != null) {
+            builder.append("filters=");
+            builder.append(filters);
+        }
+        builder.append("]");
+        return builder.toString();
     }
 
 }
